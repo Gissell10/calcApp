@@ -1,0 +1,196 @@
+/*  ==============     GOOGLE FONTS        ===============    */
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@600;700&display=swap");
+/*  ==============     VARIABLES CSS       ===============    */
+
+:root {
+  /*  ======  COLORS  ======  */
+
+  /* === Backgrounds === */
+  --main: hsl(222, 26%, 31%);
+  --toggle-keypad: hsl(223, 31%, 20%);
+  --screen: hsl(224, 36%, 15%);
+
+  /* === Keys === */
+  --dark-blue-key-background: hsl(225, 21%, 49%);
+  --dark-blue-key-shadow: hsl(224, 28%, 35%);
+  --red-key-background-toggle: hsl(6, 63%, 50%);
+  --red-key-shadow: hsl(6, 70%, 34%);
+  --orange-key-background: hsl(30, 25%, 89%);
+  --orange-key-shadow: hsl(28, 16%, 65%);
+
+  /* === Text === */
+  --dark-grayish: hsl(221, 14%, 31%);
+  --white: hsl(0, 0%, 100%);
+
+  /*  ======  TYPOGRAPHY ======  */
+  --font-family: "Spartan", sans-serif;
+  --font-size: 32px;
+  --Weights: 700;
+}
+
+/*  ======  BASE   ======  */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background: var(--orange-key-background);
+}
+button{
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:none;
+  cursor: pointer;
+  color: white;
+}
+
+/*  ======  Reusable class  ======  */
+.grid {
+  display: grid;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+/*  ==== MAIN ====  */
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+button{
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+/*  ==== CALCULATOR====  */
+
+.calculator {
+  max-width: 400px;
+  background-color: var(--main);
+  margin: 2rem 2.5rem;
+  border-radius: 2%;
+}
+
+/*  ==== CONTAINER====  */
+.container {
+  min-width: 400px;
+  padding: 2rem 2rem;
+  border-radius: 15px;
+}
+
+/*  ==== TITLE====  */
+.title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color:var(--white);
+  align-items: center;
+}
+.logo {
+  font-size: 3rem;
+}
+.theme {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.toggle {
+  width: 3rem;
+  height: 1.6rem;
+  background-color: var(--toggle-keypad);
+  border-radius: 15px;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.round {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--red-key-background-toggle);
+  border-radius: 50px;
+  margin-left: 5px;
+}
+/*  ==== SCREEN====  */
+.screen {
+  border-radius: 15px;
+  background-color: var(--screen);
+  color:var(--white);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.input{
+  font-size: 3vh;
+  color:aliceblue;
+}
+/*  ==== KEYPAD====  */
+.keypad {
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  background-color: var(--toggle-keypad);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  border-radius: 15px;
+  padding: 20px;
+}
+.grid-item {
+  background-color: var(--orange-key-background);
+  color: var(--dark-grayish);
+  box-shadow: 1px 4px hsl(28, 16%, 65%);
+  font-size: var(--font-size);
+
+}
+.grid-item::before {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+.reset{
+  background-color: var(--dark-blue-key-background);
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: 10px;
+  font-size: 25px;
+  box-shadow: 1px 4px hsl(224, 28%, 35%);
+}
+.equal{
+  background-color: var(--red-key-background-toggle);
+  grid-column-start: 3;
+  grid-column-end: 5;
+  padding: 10px;
+  box-shadow: 1px 4px hsl(6, 70%, 34%);
+  font-size: 25px;
+}
+.del{
+  background-color: var(--dark-blue-key-background);
+  color: white;
+  font-size: 25px;
+  box-shadow: 1px 4px hsl(224, 28%, 35%);
+}
+.grid-item:hover{
+  opacity: 2;
+  background-color:hsl(240, 3%, 81%); 
+}
+.reset:hover, .del:hover{
+  opacity: 1;
+  background-color: hsl(225deg 16% 57%);
+}
+.equal:hover{
+  background-color: var(--red-key-background-toggle);
+}
+/*  ==== ATTRIBUTION====  */
+.attribution {
+  visibility: hidden;
+}
